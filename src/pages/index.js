@@ -8,7 +8,9 @@ import { FaLock } from 'react-icons/fa';
 
 export default function Home() {
   
-
+if (typeof window !== "undefined") {
+  firebaseAppAuth = firebaseApp.auth()
+}
   function handleClick(e) {
     var numbesr=document.getElementById("outlined-basic").value;  
     var recaptcha = new firebase.auth.RecaptchaVerifier('recaptcha');
